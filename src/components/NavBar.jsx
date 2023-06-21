@@ -2,6 +2,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
+import { CartWidget } from "./CartWidget";
+
 
 //navBar items:
 const navMenu = [
@@ -19,6 +21,7 @@ export const NavBar = () => (
         {navMenu.map((item) => 
           <Nav.Link key={item.text} href={item.link}>{item.text}</Nav.Link>)}
       </Nav>
+      <CartWidget />
     </Container>
   </Navbar>
 )
