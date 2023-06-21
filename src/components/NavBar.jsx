@@ -2,8 +2,6 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-//TODO:
-//import cart from "../assets/cartIcon.png" 
 
 //navBar items:
 const navMenu = [
@@ -22,6 +20,5 @@ export const NavBar = () => (
           <Nav.Link key={item.text} href={item.link}>{item.text}</Nav.Link>)}
       </Nav>
     </Container>
-      {/* <img src={cart} alt="shopping cart icon" /> 0 */}
   </Navbar>
 )
