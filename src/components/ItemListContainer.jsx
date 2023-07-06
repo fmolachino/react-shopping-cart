@@ -5,6 +5,13 @@ import { useParams } from "react-router-dom";
 import productData from "../data/products.json";
 import { ItemList } from "../components/ItemList"
 
+const styles = {
+    productContainer: {
+        display: "flex",
+        flexWrap: "wrap",
+    }
+}
+
 //TODO: to be a future page
 export const ItemListContainer = props => {
   const [products, setProducts] = useState([])
@@ -31,13 +38,15 @@ export const ItemListContainer = props => {
   }, [id])
 
   return (
-    <Container className="mt-3">
-      <h1>{props.greeting}</h1>
-      {products.length === 0 ? (
-        <div>Loading...</div>
-      ) : <ItemList products={products} />
-      }
-    </Container>
+    <>
+        <h1>{props.greeting}</h1>
+        <Container style={styles.productContainer} className="mt-3">
+        {products.length === 0 ? (
+            <div>Loading...</div>
+        ) : <ItemList products={products} />
+        }
+        </Container>
+    </>
   )
 }
 
