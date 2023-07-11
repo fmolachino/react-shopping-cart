@@ -39,7 +39,7 @@ export const ItemListContainer = props => {
 
   return (
     <>
-        <h1>{props.greeting}</h1>
+        <h1 style={{textAlign:'center'}}>{props.greeting}</h1>
         <Container style={styles.productContainer} className="mt-3">
         {products.length === 0 ? (
             <div>Loading...</div>

@@ -2,11 +2,13 @@
 import Card from "react-bootstrap/Card"
 //import { Link } from "react-router-dom"
 
+const cardMargin = '4px';
+
 
 
 export const Item = ({product}) => {
     return (
-        <Card style={{ width: '18rem' }}
+        <Card style={{ width: '18rem', margin: cardMargin}}
             key={product.id}
             className="">
           <Card.Img variant="top" src={product.image} />
