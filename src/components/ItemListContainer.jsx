@@ -40,7 +40,7 @@ export const ItemListContainer = props => {
   return (
     <>
         <h1 style={{textAlign:'center'}}>{props.greeting}</h1>
-        <Container style={styles.productContainer} className="mt-3">
+        <Container  style={styles.productContainer} className="mt-3 d-flex justify-content-center align-items-center">
         {products.length === 0 ? (
             <div>Loading...</div>
         ) : <ItemList products={products} />

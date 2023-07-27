@@ -1,7 +1,7 @@
-//import Button from "react-bootstrap/Button"
+import Button from "react-bootstrap/Button"
 import Card from "react-bootstrap/Card"
 import ItemCounter from "./ItemCounter";
-//import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const cardMargin = '4px';
 
@@ -19,9 +19,9 @@ export const Item = ({product}) => {
              Category: {product.category}
             </Card.Text>
             <ItemCounter initialValue={1} itemStock={product.stock} step={1} /*handleClickAdd={handleClickOnAdd}*/ />
-            {/* <Link to={`/item/${product.id}`}>
+            <Link to={`/item/${product.id}`}>
                 <Button variant="primary">See detail</Button>
-            </Link> */}
+            </Link>
           </Card.Body>
         </Card>
     )
