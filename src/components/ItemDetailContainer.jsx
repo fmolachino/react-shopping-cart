@@ -1,6 +1,7 @@
 import Container from "react-bootstrap/Container";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { askItemFromId } from "../auxiliaries/askForData";
 
 import productData from "../data/products.json";
 import { ItemDetail } from "./ItemDetail"
@@ -15,20 +16,17 @@ const styles = {
 //TODO: Finish the ID detail nav.
 export const ItemDetailContainer = props => {
   const [products, setProducts] = useState([])
+  const id = useParams().id;
 
   
   useEffect(() => {
-    const myPromise = new Promise((resolve, rejected) => {
-      setTimeout(() => {
-         resolve(productData);
-      }, 2000)
-    })
+    askItemFromId(id)
+      .then((res) => {
+        setProducts(res);
+      })
+  }, [id])
 
-    myPromise.then(result => {
-            setProducts(result)
-        })
-  }, [])
-
+  
   return (
         <Container style={styles.productContainer} className="mt-3">
           <h1>Product Detail:</h1>
