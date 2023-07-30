@@ -8,12 +8,12 @@ const styles = {
   },
 }
 
-function ItemCounter({ initialValue, itemStock, step, /*handleClickAdd*/ }) {
+//if i want to add more than one unit per click, i can do ir via step (now harcoded as 1)
+function ItemCounter({ initialValue, itemStock, step, onAdd }) {
+
   const [count, setCount] = useState(initialValue);
+
   const [showAlert, setShowAlert] = useState(false);
-
-
-
 
 
   const increment = () => {
@@ -28,7 +28,7 @@ function ItemCounter({ initialValue, itemStock, step, /*handleClickAdd*/ }) {
   };
 
   const decrement = () => {
-    if (count > step) {
+    if (count >= step) {
       setCount(count - step);
     }
   };
@@ -38,7 +38,7 @@ function ItemCounter({ initialValue, itemStock, step, /*handleClickAdd*/ }) {
       <button style={styles.borderless} onClick={decrement}>-</button>
       <span>{count}</span>
       <button style={styles.borderless} onClick={increment}>+</button>
-      {/* <button onClick={handleClickAdd}>Add to cart</button> */}
+      {<button onClick={() => onAdd(count)}>Add to cart</button>}
     </div>
   );
 }
