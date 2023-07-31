@@ -6,16 +6,16 @@ import { ItemListContainer } from "./components/ItemListContainer";
 import { ItemDetailContainer } from "./components/ItemDetailContainer";
 
 import { NavBar } from "./components/NavBar";
+import  Cart  from "./components/Cart";
+
 import { CartContext, CartProvider } from "./context/cartContext";
 
 export default function App() {
 
-  
-
   return (
     <>
     {/* Whatever element is wraped by the provider, will have acces to it. */}
-      <CartProvider>
+      <CartProvider >   
         <BrowserRouter>
           <NavBar />
           <Routes>
@@ -33,7 +33,7 @@ export default function App() {
             />
             {/* <Route
               path="/cart"
-              element={<Checkout />}
+              element={<Cart />}
             /> */}
           </Routes>
         </BrowserRouter>

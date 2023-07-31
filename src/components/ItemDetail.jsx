@@ -4,6 +4,7 @@ import ItemCounter from "./ItemCounter";
 import { Link } from "react-router-dom"
 import { CartContext } from "../context/cartContext";
 import { useContext } from "react";
+import { useState } from "react";
 
 
 const cardMargin = '4px';
@@ -12,12 +13,10 @@ const cardMargin = '4px';
 
 export const ItemDetail = ({product}) => {
 
-  const { addItem } = useContext(CartContext)
+  const { cart, addToCart } = useContext(CartContext)
 
-
-
-  const onAddItem = quantity => addItem(product, quantity)
-
+  const [count, setCount] = useState(1);
+  
 
     return (
         <Card style={{ width: '18rem', margin: cardMargin}}
@@ -29,7 +28,7 @@ export const ItemDetail = ({product}) => {
             <Card.Text>
              Category: {product.category}
             </Card.Text>
-            <ItemCounter initialValue={1} itemStock={product.stock} step={1} onAdd={onAddItem} />
+            <ItemCounter product={product} counter={count} onAdd={() => { addToCart(product, count)}} setCount={setCount} />
             <Link to={`/item/${product.id}`}>
                 <Button variant="primary">See detail</Button>
             </Link>

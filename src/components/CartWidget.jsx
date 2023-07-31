@@ -1,5 +1,8 @@
 import cartIcon from "../assets/cartIcon.png"
 
+import { CartContext } from "../context/cartContext";
+import { useContext } from "react";
+
 const styles = {
     img: {
         height: "2rem",
@@ -11,9 +14,14 @@ const styles = {
     },
 }
 
-export const CartWidget = () => (
-    <>
-        <img src={cartIcon} style={styles.img} alt="shopping cart icon" /> 
-        <span style={styles.span}>0</span>
-    </>
-)
+export const CartWidget = () => {
+
+    
+    
+    return (
+        <>
+            <img src={cartIcon} style={styles.img} alt="shopping cart icon" /> 
+            <span style={styles.span}>0</span>
+         </>
+    )
+}

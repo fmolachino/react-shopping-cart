@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { askItemFromId } from "../auxiliaries/askForData";
 
-import productData from "../data/products.json";
 import { ItemDetail } from "./ItemDetail"
 
 const styles = {
@@ -15,7 +14,9 @@ const styles = {
 
 //TODO: Finish the ID detail nav.
 export const ItemDetailContainer = props => {
+
   const [products, setProducts] = useState([])
+
   const id = useParams().id;
 
   

@@ -18,9 +18,8 @@ export const Item = ({product}) => {
             <Card.Text>
              Category: {product.category}
             </Card.Text>
-            <ItemCounter initialValue={1} itemStock={product.stock} step={1} /*handleClickAdd={handleClickOnAdd}*/ />
             <Link to={`/item/${product.id}`}>
-                <Button variant="primary">See detail</Button>
+                <Button variant="primary">See more</Button>
             </Link>
           </Card.Body>
         </Card>

@@ -9,36 +9,35 @@ const styles = {
 }
 
 //if i want to add more than one unit per click, i can do ir via step (now harcoded as 1)
-function ItemCounter({ initialValue, itemStock, step, onAdd }) {
-
-  const [count, setCount] = useState(initialValue);
+function ItemCounter({ product, counter, onAdd, setCount }) {
 
   const [showAlert, setShowAlert] = useState(false);
 
-
   const increment = () => {
-    if (count + step <= itemStock) {
-      setCount(count => count + step);
+    if (counter + 1 <= product.stock) {
+      setCount(counter => counter + 1);
     
     //throw alert if counter reached maximum stock
-    } else if ((count + step) > itemStock) {
+    } else if ((counter + 1) > product.stock) {
       alert("Reached maximum available stock!")
     }
 
   };
 
   const decrement = () => {
-    if (count >= step) {
-      setCount(count - step);
+    if (counter >= 1) {
+      setCount(counter - 1);
     }
   };
+
+  
 
   return (
     <div>
       <button style={styles.borderless} onClick={decrement}>-</button>
-      <span>{count}</span>
+      <span>{counter}</span>
       <button style={styles.borderless} onClick={increment}>+</button>
-      {<button onClick={() => onAdd(count)}>Add to cart</button>}
+      {<button onClick={onAdd}>Add to cart</button>}
     </div>
   );
 }
