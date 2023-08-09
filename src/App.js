@@ -8,7 +8,7 @@ import { ItemDetailContainer } from "./components/ItemDetailContainer";
 import { NavBar } from "./components/NavBar";
 import  Cart  from "./components/Cart";
 
-import { CartContext, CartProvider } from "./context/cartContext";
+import { CartContext, CartProvider } from "./context/CartContext";
 
 export default function App() {
 
@@ -31,10 +31,10 @@ export default function App() {
               path="/item/:id"
               element={<ItemDetailContainer />}
             />
-            {/* <Route
+            <Route
               path="/cart"
               element={<Cart />}
-            /> */}
+            />
           </Routes>
         </BrowserRouter>
       </CartProvider>
