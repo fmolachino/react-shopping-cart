@@ -7,8 +7,10 @@ import { ItemDetail } from "./ItemDetail"
 
 const styles = {
     productContainer: {
-        display: "flex",
-        flexWrap: "wrap",
+      display: "flex",
+      justifyContent: "center", // Horizontally center
+      alignItems: "center", // Vertically center
+      height: "70vh"
     }
 }
 
@@ -29,13 +31,16 @@ export const ItemDetailContainer = props => {
 
   
   return (
+    <>
+        <div style={{ textAlign: "center" }}><h1>Product Details:</h1></div>
         <Container style={styles.productContainer} className="mt-3">
-          <h1>Product Detail:</h1>
+          
           {products.length === 0 ? (
               <div>Loading...</div>
           ) : <ItemDetail product={products} />
           }
         </Container>
+    </>
   )
 }
 

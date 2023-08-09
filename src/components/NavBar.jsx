@@ -23,9 +23,9 @@ const uniqueCategories = new Set(categories)
 export const NavBar = () => (
     <Navbar bg="dark" data-bs-theme="dark">
     <Container>
-      <Navbar.Brand className="nav-link" to="/">Fer E-Commerce</Navbar.Brand>
       <Nav className="me-auto">
-        {[...uniqueCategories].map((product) => 
+          <NavLink className="nav-link" to="/">Fer E-Commerce</NavLink>
+          {[...uniqueCategories].map((product) => 
           <NavLink key={product.id} className="nav-link" to={`/category/${product}`}> {product} </NavLink>)}
       </Nav>
       <CartWidget />
