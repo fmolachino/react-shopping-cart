@@ -10,7 +10,7 @@
     {"id": "prod9", "name": "Mouse 4", "price": 999, "image": "https://placehold.co/300", "category": "Mices", "stock": 10},
     {"id": "prod10", "name": "Mouse 5", "price": 999, "image": "https://placehold.co/300", "category": "Mices", "stock": 25},
     {"id": "prod11", "name": "Pad 1", "price": 999, "image": "https://placehold.co/300", "category": "Pads", "stock": 0},
-    {"id": "prod12", "name": "Pad 2", "price": 999, "image": "https://placehold.co/300", "category": "Pads", "stock": 0},
+    {"id": "prod12", "name": "Pad 2", "price": 999, "image": "https://placehold.co/300", "category": "Pads", "stock": 1},
     {"id": "prod13", "name": "Pad 3", "price": 999, "image": "https://placehold.co/300", "category": "Pads", "stock": 3},
     {"id": "prod14", "name": "Pad 4", "price": 999, "image": "https://placehold.co/300", "category": "Pads", "stock": 5},
     {"id": "prod15", "name": "Pad 5", "price": 999, "image": "https://placehold.co/300", "category": "Pads", "stock": 7}
