@@ -1,9 +1,10 @@
 import Container from "react-bootstrap/Container";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { askItemFromId } from "../auxiliaries/askForData";
 
-import { ItemDetail } from "./ItemDetail"
+import { doc, getDoc } from "firebase/firestore";
+import { ItemDetail } from "./ItemDetail";
+import { db } from "../firebase/config"; 
 
 const styles = {
     productContainer: {
@@ -17,16 +18,26 @@ const styles = {
 //TODO: Finish the ID detail nav.
 export const ItemDetailContainer = props => {
 
+  const [item, setItem] = useState(null);
   const [products, setProducts] = useState([])
 
   const id = useParams().id;
 
   
   useEffect(() => {
-    askItemFromId(id)
-      .then((res) => {
-        setProducts(res);
+    
+    const docRef = doc(db, "products", id);
+    getDoc(docRef)
+      .then((resp) => {
+        setItem(
+        { ...resp.data(), id: resp.id}
+        );
+        setProducts(
+        { ...resp.data(), id: resp.id}
+        )
       })
+
+
   }, [id])
 
   

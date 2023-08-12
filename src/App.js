@@ -24,7 +24,7 @@ export default function App() {
               element={<ItemListContainer greeting="Welcome to Fer's Shop" />}
             />
             <Route
-              path="/category/:id"
+              path="/category/:category"
               element={<ItemListContainer greeting="Welcome to Fer's Shop" />}
             />
             <Route
