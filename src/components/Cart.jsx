@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 //import products from "../data/products.json"
 
@@ -37,6 +38,7 @@ const Cart = () => {
         <>
           <h2>Total Price: ${totalPrice()}</h2>
           <button onClick={handleClearCart}>Clear Cart</button>
+          <Link to="/checkout">Confirm Order</Link>
         </>
       ) : (
         <h2>Cart is empty, please add a product!</h2>

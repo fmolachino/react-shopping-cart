@@ -7,6 +7,7 @@ import { ItemDetailContainer } from "./components/ItemDetailContainer";
 
 import { NavBar } from "./components/NavBar";
 import  Cart  from "./components/Cart";
+import Checkout from "./components/Checkout";
 
 import { CartContext, CartProvider } from "./context/CartContext";
 
@@ -35,6 +36,11 @@ export default function App() {
               path="/cart"
               element={<Cart />}
             />
+            <Route
+              path="/checkout"
+              element={<Checkout />}
+            />
+
           </Routes>
         </BrowserRouter>
       </CartProvider>
