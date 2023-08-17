@@ -6,6 +6,19 @@ import { Link } from "react-router-dom";
 
 //TODO center stuff and make it more visual appealing.
 
+const linkButtonStyle = {
+  display: "inline-block",
+  padding: "10px 20px",
+  backgroundColor: "#007bff",
+  color: "#fff",
+  textDecoration: "none",
+  border: "none",
+  cursor: "pointer",
+  fontSize: "16px",
+  borderRadius: "5px",
+  margin: "0 10px", 
+};
+
 const Cart = () => {
   const { addedProducts, totalPrice, clearCart, deleteItem } =
     useContext(CartContext);
@@ -38,7 +51,7 @@ const Cart = () => {
         <>
           <h2>Total Price: ${totalPrice()}</h2>
           <button onClick={handleClearCart}>Clear Cart</button>
-          <Link to="/checkout">Confirm Order</Link>
+          <Link to="/checkout" style={linkButtonStyle}>Confirm Order</Link>
         </>
       ) : (
         <h2>Cart is empty, please add a product!</h2>
